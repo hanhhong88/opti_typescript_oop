@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { chromium, defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -40,8 +40,10 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'e2e',
+      use: { 
+        browserName: 'chromium',
+        ...devices['Desktop Chrome'] },
     },
 
     // {
